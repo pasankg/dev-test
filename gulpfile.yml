@@ -1,0 +1,99 @@
+# The url served by Browsersync.
+# @see gulpfiles/browsersync.js
+developmentUrl: 127.0.0.1
+# The theme name.
+theme: dev-test_theme
+# The root directory.
+httpRoot: app
+
+sass:
+  # Source *.scss files to build.
+  # @see gulpfiles/styles.js
+  # @see gulpfiles/config.js
+  src: app/themes/dev-test_theme/src
+  # Destination of compiled CSS.
+  # @see gulpfiles/styles.js
+  dest: app/themes/dev-test_theme/css
+
+js:
+  # ESLint and Babel will run on these directories.
+  # @see gulpfiles/lint.js
+  # @see gulpfiles/config.js
+  # @see gulpfiles/scripts.js
+  src: app/themes/dev-test_theme/src
+  modules: app/modules/custom
+  # Destination of transpiled, minfied JS.
+  # @see gulpfiles/scripts.js
+  dest: app/themes/dev-test_theme/js
+
+# @see gulpfiles/styleguide.js
+styleguide:
+  title: Dev test Style Guide
+  # Directory the style guide builds to.
+  dest: app/styleguide
+  builder: node_modules/kss-offscreen-twig
+  showMarkup: true
+  markupClass: 'language-html'
+  highlightSyntax: true
+  # Add .css files for the style guide here.
+  cssFiles:
+    - app/themes/dev-test_theme/css/styles.css?
+    - app/themes/dev-test_theme/css/preprocessed.css?
+    - app/themes/dev-test_theme/css/style-guide/chroma-kss-styles.css
+    - app/themes/dev-test_theme/css/style-guide/kss-only.css
+  # Add .js files for the style guide here.
+  jsFiles:
+    - app/core/assets/vendor/jquery/jquery.min.js
+    - app/core/assets/vendor/domready/ready.min.js
+    - app/core/assets/vendor/jquery-once/jquery.once.min.js
+    - app/core/assets/vendor/jquery.ui/ui/core-min.js
+    - app/core/assets/vendor/jquery.ui/ui/widget-min.js
+    - app/core/misc/drupal.js
+    - app/core/misc/drupal.init.js
+
+autoprefixer:
+  # Standard browser compatibility settings.
+  # @see https://github.com/ai/browserslist#queries
+  # possibly sass
+  browsers:
+    - last 2 versions
+    - ie >= 10
+    - and_chr >= 2.3
+
+# @see gulpfiles/modernizr.js
+# @see https://modernizr.com/docs
+modernizr:
+  # Only rebuild if needed.
+  cache: true
+  # Modernizr is shipped as a precompiled, minified js file.
+  dest: app/themes/dev-test_theme/src/vendor/modernizr/
+  # Options to include.
+  options:
+    - prefixes
+    - addTest
+    - setClasses
+    - testStyles
+  # Tests to include. Others are picked up automatically by gulp.
+  tests:
+    - details
+    - inputtypes
+    - touchevents
+  # Some tests are added automatically but are incorrect, exclude them here.
+  excludeTests:
+    - video
+    - hidden
+    - svg
+    - input
+    - sizes
+
+# @see gulpfiles/svg.js
+svg:
+  svgo:
+    # Directories that contain .svg files to be minified with svgo.
+    src:
+      - app/themes/dev-test_theme/src/components/icon
+    # List of options for SVGO.
+    # @see https://github.com/svg/svgo
+    plugins:
+      removeDimensions: false
+      removeViewbox: false
