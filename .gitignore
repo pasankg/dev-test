@@ -10,7 +10,6 @@
 *.rar
 *.tar
 *.tgz
-*.zip
 
 # Logs and databases #
 ######################
@@ -52,7 +51,6 @@ Thumbs.db
 /app/test-output.html
 /build/logs
 
-
 # Dev files #
 #############
 .idea
@@ -61,3 +59,5 @@ Thumbs.db
 /app/sites/default/settings.local.*.php
 /mariadb-init
 /drush/contrib
+
+node_modules/

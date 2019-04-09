@@ -22,11 +22,11 @@ default: list;
 
 deploy: updb config-import cache-rebuild
 
-import:
+config-import:
 	$(DRUSH) -r app pm:enable -y drush_cmi_tools
 	$(DRUSH) cimy -y  --source=$(CONFIG_DIR) --install=$(CONFIG_INSTALL) --delete-list=$(CONFIG_DELETE)
 
-export:
+config-export:
 	$(DRUSH) -r app pm:enable -y drush_cmi_tools
 	$(DRUSH) cexy -y --destination=$(CONFIG_DIR) --ignore-list=$(CONFIG_IGNORE)
 
@@ -56,14 +56,11 @@ updb:
 entity-updates:
 	$(DRUSH) entity:updates -y
 
-cr:
-	$(DRUSH) cr
-
 phpcbf:
 	./bin/phpcbf
 
 phpcs:
-	./bin/phpcs
+	./bin/phpcs -a
 
 test:
 	./bin/phpunit
@@ -71,4 +68,12 @@ test:
 login:
 	$(DRUSH) uli
 
-.PHONY: list init devify updb entity-updates cr phpcbf phpcs test login
+fix-php: phpcbf
+
+lint-php: phpcs
+
+styleguide:
+	$(GULP) build
+
+
+.PHONY: list build init mkdirs updb entity-updates cache-rebuild styleguide db-sync config-import config-export phpcbf phpcs test-init login default
