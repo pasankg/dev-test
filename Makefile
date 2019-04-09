@@ -4,8 +4,34 @@ APP_ROOT=$(PWD)/app
 APP_URL=http://127.0.0.1
 DB_URL=mysql://drupal:drupal@127.0.0.1/local
 DRUSH=./bin/drush -r $(APP_ROOT) -l $(APP_URL)
+GULP=node --max-old-space-size=512 ./node_modules/.bin/gulp
+NIGHTWATCH=$(CURDIR)/node_modules/.bin/nightwatch -c tests/nightwatch.json
+COMPOSER=composer
+YARN=yarn
+PHPCBF=./bin/phpcbf
+PHPCS=./bin/phpcs
+
+CONFIG_DIR=$(CURDIR)/config-export
+CONFIG_DELETE=$(CURDIR)/drush/config-delete.yml
+CONFIG_IGNORE=$(CURDIR)/drush/config-ignore.yml
+CONFIG_INSTALL=$(CURDIR)/config-install
 
 .DEFAULT_GOAL := list
+
+default: list;
+
+deploy: updb config-import cache-rebuild
+
+import:
+	$(DRUSH) -r app pm:enable -y drush_cmi_tools
+	$(DRUSH) cimy -y  --source=$(CONFIG_DIR) --install=$(CONFIG_INSTALL) --delete-list=$(CONFIG_DELETE)
+
+export:
+	$(DRUSH) -r app pm:enable -y drush_cmi_tools
+	$(DRUSH) cexy -y --destination=$(CONFIG_DIR) --ignore-list=$(CONFIG_IGNORE)
+
+cache-rebuild:
+	$(DRUSH) cache:rebuild
 
 list:
 	@$(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1n}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
