@@ -19,6 +19,7 @@ services:
       - SIMPLETEST_DB=mysql://root:root@127.0.0.1/d8_testing
       - BROWSERTEST_OUTPUT_DIRECTORY=/data/app/sites/simpletest/browser_output
       - MINK_DRIVER_ARGS_WEBDRIVER=["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://localhost:9515"]
+      - XDEBUG_CONFIG=remote_host=docker.for.mac.localhost idekey=PHPSTORM
 
   xdebug:
     image: nickschuch/d4m-tcp-forwarder
