@@ -1,0 +1,9 @@
+uuid: 2e3131fb-543c-4a65-b242-d473c6e48dbb
+langcode: en
+status: true
+dependencies: {  }
+name: Source
+vid: source
+description: 'Source of article'
+hierarchy: 0
+weight: 0
