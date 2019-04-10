@@ -1,7 +1,7 @@
 type: module
-name: Migrate JSON Example
-description: 'Simple JSON Migration example'
-package: Examples
+name: Migrate Articles
+description: 'Migrate content from a feed'
+package: migrate_articles
 core: 8.x
 dependencies:
   - drupal:migrate

@@ -1,9 +1,9 @@
 # This migration demonstrates a simple import from a JSON file.
-id: product
-label: JSON feed of Products
-migration_group: Product
+id: article
+label: JSON feed of articles
+migration_group: Article
 migration_tags:
-  - json example
+  - json article
 source:
   # We use the JSON source plugin.
   plugin: url
@@ -24,9 +24,9 @@ source:
   # track_changes: true
   # Copy the example JSON file in artifacts folder to sites/default/files folder.
   urls:
-    - 'public://migrate_json_example/products.json'
+    - 'public://migrate_articles/data-feed.json'
   # An xpath-like selector corresponding to the items to be imported.
-  item_selector: product
+  item_selector: data
   # Under 'fields', we list the data items to be imported. The first level keys
   # are the source field names we want to populate (the names to be used as
   # sources in the process configuration below). For each field we're importing,
@@ -35,37 +35,53 @@ source:
   # is relative to the elements retrieved by item_selector.
   fields:
     -
-      name: upc
-      label: 'Unique product identifier'
-      selector: upc
+      name: id
+      label: 'Article ID'
+      selector: id
     -
-      name: name
-      label: 'Product name'
-      selector: name
+      name: body
+      label: 'Summary content'
+      selector: contentSummary
     -
-      name: description
-      label: 'Product description'
-      selector: description
+      name: title
+      label: 'Article name'
+      selector: contentTitle
     -
-      name: price
-      label: 'Product price'
-      selector: price
+      name: field_source
+      label: 'Source of the article'
+      selector: source
+    -
+      name: path
+      label: 'Article url'
+      selector: url
+    -
+      name: field_image
+      label: 'Article image'
+      selector: contentImageUrl
+    -
+      name: created
+      label: 'Created date'
+      selector: pageDateCreated
   # Under 'ids', we identify source fields populated above which will uniquely
+  ids:
+    id:
+      type: string
   # identify each imported item. The 'type' makes sure the migration map table
   # uses the proper schema type for stored the IDs.
-  ids:
-    upc:
-      type: integer
 process:
   # Note that the source field names here (name, description and price) were
   # defined by the 'fields' configuration for the source plugin above.
   type:
     plugin: default_value
-    default_value: product
-  title: name
-  field_upc: upc
-  field_description: description
-  field_price: price
+    default_value: article
+  id: id
+  title: title
+#  field_source: field_source
+  path: path
+  body: body
+  'settings/display_summary': display_summary
+#  field_image: field_image
+  created: created
   sticky:
     plugin: default_value
     default_value: 0
@@ -78,4 +94,4 @@ migration_dependencies: {  }
 dependencies:
   enforced:
     module:
-      - migrate_json_example
+      - migrate_articles
