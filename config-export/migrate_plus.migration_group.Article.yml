@@ -1,0 +1,10 @@
+uuid: 18fd3e36-b448-4dff-819d-d35465e6ddd6
+langcode: en
+status: true
+dependencies: {  }
+id: Article
+label: Article
+description: ''
+source_type: null
+module: null
+shared_configuration: null

@@ -1,0 +1,89 @@
+uuid: 1ac29d19-eca5-4861-886c-92c5a312493e
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_articles
+_core:
+  default_config_hash: wG4RsFEKDgzNArsIU5S0FmDg2kheFbBnLVhb_NA4Ss0
+id: article
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'json article'
+migration_group: Article
+label: 'JSON feed of articles'
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls:
+    - 'public://migrate_articles/data-feed.json'
+  item_selector: data
+  fields:
+    -
+      name: id
+      label: 'Article ID'
+      selector: id
+    -
+      name: summary_body
+      label: 'Summary content'
+      selector: contentSummary
+      display_summary: true
+    -
+      name: title
+      label: 'Article name'
+      selector: contentTitle
+    -
+      name: field_source
+      label: 'Source of the article'
+      selector: source
+    -
+      name: path
+      label: 'Article url'
+      selector: url
+    -
+      name: created
+      label: 'Created date'
+      selector: pageDateCreated
+    -
+      name: body_content
+      label: Body
+      selector: content
+  ids:
+    id:
+      type: string
+process:
+  type:
+    plugin: default_value
+    default_value: article
+  title: title
+  field_source:
+    -
+      plugin: entity_generate
+      source: field_source
+      value_key: name
+      bundle_key: vid
+      bundle: article
+      entity_type: taxonomy_term
+      ignore_case: true
+      destination_field: field_source/target_id
+      default_values:
+        field_source/description: 'Default description'
+      values:
+        name: field_source
+  body/value:
+    plugin: default_value
+    default_value: ''
+  body/summary: summary_body
+  sticky:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 0
+destination:
+  plugin: 'entity:node'
+migration_dependencies: {  }
