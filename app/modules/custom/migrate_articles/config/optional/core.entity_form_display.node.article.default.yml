@@ -88,6 +88,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
 hidden:
   comment: true
   field_tags: true

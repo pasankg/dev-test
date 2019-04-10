@@ -54,10 +54,10 @@ source:
       name: path
       label: 'Article url'
       selector: url
-    -
-      name: field_image
-      label: 'Article image'
-      selector: contentImageUrl
+#    -
+#      name: field_image
+#      label: 'Article image'
+#      selector: contentImageUrl
     -
       name: created
       label: 'Created date'
@@ -74,10 +74,10 @@ process:
   type:
     plugin: default_value
     default_value: article
-  id: id
+#  id: id
   title: title
-#  field_source: field_source
-  path: path
+  field_source: field_source
+#  path: path
   body: body
   'settings/display_summary': display_summary
 #  field_image: field_image
