@@ -11,6 +11,7 @@
         "drupal/core": "~8.6.0",
         "drupal/drush-cmi-tools": "dev-8.x-2.x",
         "drupal/migrate_plus": "^4.1",
+        "drupal/migrate_tools": "^4.1",
         "webflo/drupal-core-require-dev": "~8.6.0"
     },
     "require-dev": {
