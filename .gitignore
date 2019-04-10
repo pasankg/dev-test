@@ -25,39 +25,56 @@ Thumbs.db
 
 # Ignore Drupal stuff #
 ########################
-/app/CHANGELOG.txt
-/app/COPYRIGHT.txt
-/app/INSTALL*.txt
-/app/LICENSE.txt
-/app/MAINTAINERS.txt
-/app/README.txt
-/app/update.php
-/app/sites/all/modules/README.txt
-/app/sites/all/themes/README.txt
-/app/sites/README.txt
-/app/UPGRADE.txt
-/app/core
-/app/modules/contrib
-/app/modules/local
-/app/profiles/contrib
-/app/sites/default/files
-/app/sites/simpletest
-/app/themes/contrib
+app/CHANGELOG.txt
+app/COPYRIGHT.txt
+app/INSTALL*.txt
+app/LICENSE.txt
+app/MAINTAINERS.txt
+app/README.txt
+app/update.php
+app/sites/all/modules/README.txt
+app/sites/all/themes/README.txt
+app/sites/README.txt
+app/UPGRADE.txt
+app/core
+app/modules/contrib
+app/modules/local
+app/profiles/contrib
+app/sites/default/files
+app/sites/simpletest
+app/themes/contrib
+
+app/.htaccess
+app/autoload.php
+app/composer.json
+app/composer.lock
+app/example.gitignore
+app/index.php
+app/modules/README.txt
+app/profiles/README.txt
+app/themes/
+app/robots.txt
+app/sites/
+app/styleguide/
+app/vendor/
+app/web.config
 
 # Continuous Integration #
 ##########################
 /bin
 /vendor
-/app/test-output.html
+app/test-output.html
 /build/logs
 
 # Dev files #
 #############
 .idea
 .php
-/app/sites/default/settings.local.php
-/app/sites/default/settings.local.*.php
+app/sites/default/settings.local.php
+app/sites/default/settings.local.*.php
 /mariadb-init
 /drush/contrib
 
 node_modules/
+
+!app/modules/custom/
