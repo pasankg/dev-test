@@ -52,7 +52,6 @@ app/example.gitignore
 app/index.php
 app/modules/README.txt
 app/profiles/README.txt
-app/themes/
 app/robots.txt
 app/sites/
 app/styleguide/

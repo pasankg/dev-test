@@ -1,0 +1,226 @@
+// Heading sizes
+//
+// .heading--sxs - Smallest - 18px/1.4
+// .heading--xs - Smaller - 20px/1.4
+// .heading--s - Small - 24px/1.4
+// .heading--m - Regular - 32px/1.4
+// .heading--l - Large - 40px/1.4
+// .heading--xl - Larger - 50px/1.4
+// .heading--xxl - Largest - 64px/1
+// .heading--feature-title - Feature Title - 48px/1
+//
+// Markup: heading.twig
+//
+// Style guide: 1.2.3
+
+.heading,
+%heading {
+  &--xxs {
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+
+  &--xs {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  &--s {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  &--m {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  &--l {
+    font-size: 2rem;
+    line-height: 1.4;
+
+    @include respond-to(tablet-portrait-up) {
+      font-size: 2.5rem;
+      letter-spacing: -1px;
+    }
+  }
+
+  &--xl {
+    font-size: 2.5rem;
+    line-height: 1.4;
+
+    @include respond-to(tablet-portrait-up) {
+      font-size: 3.125rem;
+      letter-spacing: -1px;
+    }
+  }
+
+  &--xxl {
+    font-size: 2.25rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @include respond-to(tablet-portrait-up) {
+      font-size: 3rem;
+      letter-spacing: -1px;
+    }
+
+    @include respond-to(tablet-landscape-up) {
+      font-size: 3.5rem;
+    }
+
+    @include respond-to(laptop-up) {
+      font-size: 4rem;
+    }
+  }
+
+  &--feature-title {
+    font-size: 1.75rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @include respond-to(tablet-portrait-up) {
+      font-size: 2.25rem;
+    }
+
+    @include respond-to(tablet-landscape-up) {
+      font-size: 3rem;
+    }
+  }
+}
+
+// H1-H6
+//
+// Markup: heading-h.twig
+//
+// Style guide: 1.2.4
+
+$chroma: add-colors('primary', (
+  heading: 'corporate-blue',
+  heading-corporate: 'corporate-blue',
+  heading-dark: 'grey-dark',
+  heading-light: 'white',
+));
+
+h1 {
+  @extend %heading--xl;
+  font-weight: 100;
+  color: color(heading);
+  margin: 3rem 0 1rem;
+}
+
+h2 {
+  @extend %heading--l;
+  font-weight: 100;
+  color: color(heading);
+  margin: 3rem 0 1rem;
+
+  &.spacing-top-none {
+    margin-top: 0;
+  }
+}
+
+h3 {
+  @extend %heading--s;
+  font-weight: bold;
+  color: color(heading);
+  margin: 1rem 0 1rem;
+}
+
+h4 {
+  @extend %heading--xs;
+  font-weight: bold;
+  color: color(heading);
+  margin: 3rem 0 1rem;
+}
+
+h5 {
+  @extend %copy--l;
+  font-weight: bold;
+  color: color(heading);
+  margin: 3rem 0 1rem;
+}
+
+h6 {
+  @extend %copy--m;
+  font-weight: bold;
+  color: color(heading);
+  margin: 3rem 0 1rem;
+}
+
+// Hero headings
+//
+// .heading--hero-xs - Smaller
+// .heading--hero-s - Small
+// .heading--hero-m - Regular
+// .heading--hero-l - Large
+// .heading--hero-xl - Larger
+// .heading--hero-xxl - Largest responsive type
+//
+// Markup: heading-hero.twig
+//
+// Style guide: 1.2.5
+
+.heading--hero,
+%heading--hero {
+  font-weight: 100;
+  margin-top: 0;
+
+  &-xs {
+    @extend %heading--hero;
+    @extend %heading--xs;
+  }
+
+  &-s {
+    @extend %heading--hero;
+    @extend %heading--s;
+  }
+
+  &-m {
+    @extend %heading--hero;
+    @extend %heading--m;
+    margin-bottom: 2rem;
+  }
+
+  &-l {
+    @extend %heading--hero;
+    @extend %heading--l;
+    margin-bottom: 2rem;
+  }
+
+  &-xl {
+    @extend %heading--hero;
+    @extend %heading--xl;
+  }
+
+  &-xxl {
+    @extend %heading--xxl;
+  }
+}
+
+// Hero heading colors
+//
+// .heading--hero-corporate - Corporate blue
+// .heading--hero-dark - Black
+// .heading--hero-light - White
+//
+// Markup: heading-colors.twig
+//
+// Style guide: 1.2.6
+
+.heading--hero-corporate,
+%heading--hero-corporate {
+  color: color(heading-corporate);
+}
+
+.heading--hero-dark,
+%heading--hero-dark {
+  color: color(heading-dark);
+}
+
+.heading--hero-light,
+%heading--hero-light {
+  color: color(heading-light);
+}

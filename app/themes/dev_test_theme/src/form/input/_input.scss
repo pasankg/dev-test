@@ -1,0 +1,183 @@
+// sass-lint:disable mixins-before-declarations no-vendor-prefixes
+
+$form-element-padding:  15px;
+$form-element-height:   50px;
+$form-border-radius:    0;
+
+// Text Input Field
+//
+// The standard `input[type="text"]` element, with a label and help text.
+//
+// Markup: input-text.twig
+//
+// Style guide: 2.3.1
+
+// Base styles for inputs/selects/etc.
+%input__text-base {
+  @extend %copy--m;
+  @include typeface(base);
+  color: color(form-text);
+  background-color: color(form-bg);
+  border: $border-width solid color(form-border);
+  border-radius: $form-border-radius;
+  appearance: none;
+  box-shadow: 0 1px 2px color(form-shadow) inset;
+
+  @include respond-to(tablet-portrait-down) {
+    font-size: 1rem;
+  }
+
+
+  // Text Input Placeholder
+  //
+  // Although placeholder text should generally be avoided, the styling of this text
+  // is shown here.
+  //
+  // Markup: input-text-placeholder.twig
+  //
+  // Style guide: 2.3.2
+
+  @include placeholder(color(form-placeholder), normal, 1rem);
+
+  &:focus {
+    border-color: color(form-focus);
+    outline: none;
+  }
+
+  // Override mozilla default invalid styling.
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  &.error {
+    border-color: color(form-error);
+    box-shadow: none;
+  }
+}
+
+.input__text,
+%input__text,
+[type='text'],
+[type='search'],
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='password'],
+[type='date'],
+[type='time'],
+[type='number'] {
+  @extend %input__text-base;
+  @include padding(0 $form-element-padding 0 $form-element-padding / 2);
+  height: spacing($form-element-height);
+  text-indent: spacing($form-element-padding / 2);
+  width: 100%;
+  max-width: 100%;
+}
+
+// Input types
+//
+// Additional input types accounted for
+//
+// Markup: input-types.twig
+//
+// Style guide 2.3.3
+
+%input__type-base {
+  background-size: 1rem;
+  background-repeat: no-repeat;
+}
+
+%input__type-icon--left {
+  @extend %input__type-base;
+  padding-left: 1.5rem;
+  background-position: .5rem center;
+}
+
+%input__type-icon--right {
+  @extend %input__type-base;
+  padding-right: 3rem;
+  background-position: calc(100% - 1rem) center;
+}
+
+[type='search'],
+.input--search {
+  @extend %input__type-icon--right;
+  background-image: embed-svg('components/icon/search.svg');
+}
+
+.input--small,
+%input--small {
+  border-width: 1px;
+  height: 2rem;
+  @include placeholder(color('text'), normal, .75rem);
+}
+
+.input__combo,
+%input__combo {
+  display: flex;
+}
+
+// Checkbox (multiple)
+//
+// The standard `input[type="checkbox"]` element, using a fieldset and legend as
+// the accessible way to group and label multiple checkbox inputs.
+//
+// Optionally a tooltip can be used by using the `aria-describedby` attribute
+// on the fieldset itself.
+//
+// Markup: input-checkbox.twig
+//
+// Style guide: 2.3.11
+
+// Checkbox (single)
+//
+// Used for things like accepting terms and conditions and opting in to
+// communications.
+//
+// Markup: input-checkbox-single.twig
+//
+// Style guide: 2.3.4
+
+// Radios (multiple)
+//
+// The standard `input[type="radio"]` element, using a fieldset and legend as
+// the accessible way to group and label multiple radio inputs.
+//
+// Optionally a tooltip can be used by using the `aria-describedby` attribute
+// on the fieldset itself.
+//
+// Markup: input-radio.twig
+//
+// Style guide: 2.3.5
+
+.form__radio,
+%form__radio,
+.form__checkbox,
+%form__checkbox,
+.form__item--checkbox,
+.form__item--radio {
+  @include margin(0 0 $spacing-xs);
+  @include padding-left(20px);
+  position: relative;
+  display: block;
+
+  label {
+    display: inline;
+    cursor: pointer;
+    vertical-align: text-bottom;
+    margin-top: .125rem;
+    margin-bottom: 0;
+  }
+
+  input {
+    display: inline;
+  }
+}
+
+[type='radio'],
+[type='checkbox'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px 6px 5px 0;
+}

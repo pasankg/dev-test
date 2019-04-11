@@ -1,0 +1,137 @@
+// sass-lint:disable no-vendor-prefixes
+
+$chroma: add-colors('primary', (
+    pseudo-tint-color: 'white',
+    hover-shadow-color: rgba(color('black'), .1),
+));
+
+// Mixins
+
+// placholder($color, $style)
+//
+// Allows form elements to quickly implement placeholder browser prefixes.
+//
+// $color - A Hex color to use for placeholder text.
+// $style - A font-style to use for placeholder test.
+
+@mixin placeholder($color, $style, $size: 1rem, $weight: normal) {
+  &::-webkit-input-placeholder {
+    // Chrome/Opera/Safari
+    color: $color;
+    opacity: 1;
+    font-style: $style;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  &::-moz-placeholder {
+    // Firefox 19+
+    color: $color;
+    opacity: 1;
+    font-style: $style;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  &:-ms-input-placeholder {
+    // IE 10+
+    color: $color;
+    opacity: 1;
+    font-style: $style;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  &:-moz-placeholder {
+    // Firefox 18-
+    color: $color;
+    opacity: 1;
+    font-style: $style;
+    font-size: $size;
+    font-weight: $weight;
+  }
+}
+
+// rtl()
+//
+// Includes Right-To-Left langauge support. Can be turned off globally by
+// setting `$include-rtl: false;`.
+
+$include-rtl: true !default;
+
+@mixin rtl {
+  [dir='rtl'] & {
+    @content;
+  }
+}
+
+// print-none()
+//
+// Do not display for printed media.
+
+@mixin print-none {
+  @media print {
+    display: none;
+  }
+}
+
+// print-only()
+//
+// Only display for printed media.
+
+@mixin print-only {
+  display: none;
+
+  @media print {
+    display: block;
+  }
+}
+
+// pseudo-tint($color)
+//
+// Transfer a color used on a parent element (e.g. border, background-color) to it's pseudo element's color property.
+// This becomes useful when you have a range of variations and want to pass through the variation color.
+// This is used with `.mask--transparent` to pass the `background-color` of any `.background` to the pseudo elements
+// which use it as the `border-color` via the css `currentColor` variable.
+//
+// $color - A Hex color used in the parent that you need to pass to the child.
+
+@mixin pseudo-tint($color: color(pseudo-tint-color)) {
+  &::before,
+  &::after {
+    color: $color;
+  }
+}
+
+// hover-shadow($size)
+//
+// Creates a box-shadow on hover and focus.
+//
+// $size - Defaults to 10px and determines the box-shadow spread/size.
+
+@mixin hover-shadow($size: 10px) {
+  transition: .25s box-shadow ease;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0 $size color(hover-shadow-color);
+  }
+}
+
+// object-fit-config($type, $position)
+//
+// Required configuration for any time we use object-fit. Configuration for the IE/Edge/Safari fallback.
+//
+// $type - fill/contain/cover.
+// $position - center/top/right/bottom/left. Defaults to nothing ∴ center.
+
+@mixin object-fit-config($type: cover, $position: center) {
+  object-fit: $type;
+  @if $position == center {
+    font-family: 'object-fit: #{$type};';
+  } @else {
+    font-family: 'object-fit: #{$type}; object-position: #{$position};';
+  }
+}

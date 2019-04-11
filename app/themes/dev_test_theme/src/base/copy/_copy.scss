@@ -1,0 +1,60 @@
+// Body copy sizes
+//
+// .copy--xs - Smaller - 12px/1.6
+// .copy--s - Small - 14px/1.6
+// .copy--m - Regular - 16px/1.6
+// .copy--l - Large - 18px/1.6
+//
+// Markup: copy.twig
+//
+// Style guide: 1.2.1
+
+.copy,
+%copy {
+  &--xs {
+    font-size: .75rem;
+    line-height: 1.6;
+  }
+
+  &--s {
+    font-size: .875rem;
+    line-height: 1.6;
+  }
+
+  &--m {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &--l {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+}
+
+// Paragraph
+//
+// Markup: copy-p.twig
+//
+// Style guide: 1.2.2
+
+p {
+  margin: 0 0 1rem;
+}
+
+// Intro copy
+//
+// Markup: copy-intro.twig
+//
+// Style guide: 1.2.7
+
+.copy--intro,
+%copy--intro {
+  @extend %copy--l;
+  color: color('corporate-blue');
+  margin: 0 0 1rem;
+
+  p {
+    margin: 0 0 1rem;
+  }
+}

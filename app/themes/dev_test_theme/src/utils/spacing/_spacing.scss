@@ -1,0 +1,20 @@
+// Spacing
+//
+// Padding for content areas.
+//
+// Markup: spacing.twig
+
+.spacing,
+%spacing {
+  &--content {
+    padding: 2rem;
+  }
+
+  &--content-h {
+    padding: 0 2rem;
+  }
+
+  &--content-v {
+    padding: 2rem 0;
+  }
+}

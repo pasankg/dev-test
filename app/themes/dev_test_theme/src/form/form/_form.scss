@@ -1,0 +1,105 @@
+// Description
+//
+// Text that describes a form field. The form element must have an `aria-describedby` attribute that points to the
+// `id` of the description text.
+//
+// Markup: form-description.twig
+//
+// Style guide: 2.3.10
+
+$chroma: add-colors('primary', (
+    form-text:          #1a1a1a,
+    form-border:        #e3e3e3,
+    form-placeholder:   'grey-mid',
+    form-bg:            'white',
+    form-error:         'ochre',
+    form-focus:         'grey-mid',
+    focus-ring:         'corporate-blue',
+    form-shadow:        ('black', rgba, .1),
+));
+
+form,
+.form {
+  margin: 0;
+  text-align: left;
+
+  &--inline {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+
+    label {
+      margin: .5rem 1rem;
+    }
+  }
+
+  .container--content & {
+    margin: 2.5rem 0 0;
+  }
+}
+
+.description,
+.form__description {
+  @extend %copy--s;
+  margin: 0 0 .25rem .25rem;
+}
+
+.form-actions,
+.form__actions {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 2rem 0 0;
+}
+
+.form-item,
+.form__item {
+  position: relative;
+  margin: 0 0 1.5rem;
+
+  // JS placeholder positioning.
+  .js-placeholder-label {
+    color: color(form-placeholder);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    pointer-events: none;
+    transition: .15s top ease, .15s font-size ease;
+
+    &.label-out {
+      top: -1.5rem;
+      color: color(label);
+    }
+
+    &.label--small {
+      top: -.5rem;
+      font-size: .8rem;
+    }
+  }
+
+  &--checkbox,
+  &--radio {
+    display: flex;
+
+    [type='checkbox'],
+    [type='radio'] {
+      position: relative;
+      margin-top: 6px;
+      margin-right: 6px;
+    }
+  }
+}
+
+.webform-confirmation__message {
+  padding-top: 74px;
+
+  h3 {
+    margin-top: -74px;
+  }
+}
+
+// Handle safari issue for multiple columns checkboxes
+.webform-options-display-two-columns,
+.webform-options-display-three-columns {
+  overflow: hidden;
+}

@@ -1,0 +1,49 @@
+name: dev_test_theme
+description: 'A custom theme for Dev test'
+base theme: bartik
+type: theme
+package: Custom
+core: 8.x
+
+ckeditor_stylesheets:
+  - css/ckeditor.css
+
+# Replace or remove entire libraries;
+# Un-comment each library to exclude it's CSS, JS and Dependencies from being loaded.
+
+libraries-override:
+  core/modernizr:
+    js:
+      assets/vendor/modernizr/modernizr.min.js: src/vendor/modernizr/modernizr.min.js
+  core/normalize: false
+  core/html5shiv: false
+#  system/base: false
+#  core/jquery.ui:
+#    css:
+#      component:
+#        assets/vendor/jquery.ui/themes/base/core.css: false
+#      theme:
+#        assets/vendor/jquery.ui/themes/base/theme.css: false
+
+# REGIONS
+# Specify the block regions required by this theme.
+
+regions:
+  navigation: Navigation
+  secondary_navigation: 'Secondary Navigation'
+  search: 'Search'
+  breadcrumb: Breadcrumb
+  content: Content
+  secondary: 'Secondary content'
+  tertiary: 'Tertiary content'
+  footer: Footer
+  sticky: Sticky header
+
+# COMPONENT LIBRARIES
+# This allows us to reference .twig files in the src/ directory by using the
+# Twig namespace: @dev_test_theme
+
+component-libraries:
+  dev_test_theme:
+    paths:
+      - src

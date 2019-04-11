@@ -16,7 +16,7 @@ import { generate } from 'browser-env-vars';
 
 // Generate a config file from the .env file in the root directory
 generate({
-  outFile: './app/themes/dev-test_theme/src/config.js',
+  outFile: './app/themes/dev_test_theme/src/config.js',
   esm: true,
 });
 

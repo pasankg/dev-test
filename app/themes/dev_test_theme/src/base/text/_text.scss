@@ -1,0 +1,156 @@
+// sass-lint:disable no-vendor-prefixes
+
+// Text
+//
+// Text in its default appearance.
+//
+// Markup: text-defaults.twig
+
+$chroma: add-colors('primary', (
+    text:      'grey-xdark',
+    text-alt:  'grey',
+    text-bg:   'white',
+    text-rule: 'grey-light',
+    hero-light: 'white'
+));
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @include typeface(base);
+  font-size: 100%;
+  line-height: 1.6em;
+  color: color(text);
+  background: color(text-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Hide scroll bars on IE.
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Strong (bold)
+//
+// Bold text using the `<strong>` tag. Please note that bold text uses a _semi-bold_ weight
+// (600 instead of 700), so using `font-weight: bold;` will produce text that
+// uses faux bold (and hence will look poor). Instead use the `<strong>` tag or
+// `font-weight: weight(bold);` if implementing in SASS.
+//
+// Markup: text-strong.twig
+
+b,
+strong {
+  font-weight: weight(bold);
+}
+
+// Emphasis (italic)
+//
+// Italic text using the `<em>` tag.
+//
+// Markup: text-em.twig
+
+// Unordered list
+//
+// The standard approach for a bullet (unordered list) is to use the default
+// `<ul>` tag as shown below.
+//
+// Markup: text-ul.twig
+
+// Ordered list
+//
+// An ordered list.
+//
+// Markup: text-ol.twig
+
+ul,
+ol {
+  @include margin(0 0 1);
+  @include padding(0 0 0 2);
+
+  // Nested lists have altered spacing.
+  ul,
+  ol {
+    @include margin(.25 0 0)
+  }
+
+  li {
+    @include margin(0 0 .25);
+  }
+}
+
+// Definition list
+//
+// A list of terms and definitions.
+//
+// Markup: text-dl.twig
+
+dl {
+  dt {
+    @include margin(1 0 0);
+    font-weight: weight(bold);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+// Blockquote
+//
+// A pull quote block.
+//
+// Markup: text-blockquote.twig
+
+blockquote {
+  @include margin(0 0 1);
+  @include padding(0 0 0 1);
+  border-left: 2px solid color(text-rule);
+}
+
+// Text Utility Classes
+//
+// For transforming text.
+//
+// .transform--upper - Uppercase
+// .transform--lower - Lowercase
+// .transform--proper - Proper (1st letter capitalized on every word)
+// .transform--none - None (undo previous transforms, uses `!important` because if you're using this, you mean it)
+//
+// Markup: text-utility.twig
+
+// sass-lint:disable no-important
+
+.transform {
+  &--upper {
+    text-transform: uppercase;
+  }
+
+  &--lower {
+    text-transform: lowercase;
+  }
+
+  &--proper {
+    text-transform: capitalize;
+  }
+
+  &--none {
+    text-transform: none !important;
+  }
+}

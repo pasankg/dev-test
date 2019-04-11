@@ -1,0 +1,366 @@
+.kss-nav__menu {
+  line-height: 1.2rem;
+}
+
+#kss-node.kss-offscreen .kss-header {
+  background: #211545;
+}
+
+#kss-node.kss-offscreen .kss-nav__menu-link.is-in-viewport {
+  color: #83d2d4;
+}
+
+@media (max-width: 959px) {
+  #kss-node.kss-offscreen .kss-doc-title {
+    display: none;
+  }
+  #kss-node.kss-offscreen .kss-header {
+    width: 45px;
+    height: 40px;
+  }
+  #kss-node.kss-offscreen .kss-offscreen__toggle {
+    text-indent: -9999px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+#kss-search {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #83d2d4;
+  border-radius: 0;
+  color: #83d2d4;
+}
+
+.kss-search .easy-autocomplete-container ul {
+  border-radius: 0;
+  border-color: #fff;
+}
+
+.kss-search .easy-autocomplete-container ul li:hover {
+  background: #ececec;
+}
+
+.kss__outline {
+  border: 2px dotted #ccc;
+  padding: 1rem;
+}
+
+.kss__grid-outline {
+  min-height: 4rem;
+}
+
+.kss__grid-outline::after {
+  content: '';
+  display: block;
+  height: 4rem;
+  border: 2px dotted #ccc;
+}
+
+[id^='kssref-layouts-'] [class^='layout-'][class*='__'] {
+  outline: 1px dotted #ccc;
+}
+
+.grid-debug .grid__col::after {
+  content: '';
+  border: 1px dashed #ccc;
+  height: 50px;
+  width: 100%;
+  display: block;
+}
+
+#kssref-3-10-1 .kss-modifier__example {
+  background-color: #f2f7f8;
+}
+
+#kssref-4-1-9 .h1-hero--light,
+#kssref-4-1-9 .h2-hero--light,
+#kssref-4-1-9 .h3-hero--light {
+  background: #211545;
+}
+
+#kssref-4-1-9 .kss-modifier__example > div {
+  border-top: 1px solid #f0f;
+  border-bottom: 1px solid #f0f;
+}
+
+#kssref-6-1 .button--transparent {
+  color: currentColor;
+}
+
+#kssref-6-10-2 .kss-modifier__wrapper {
+  background: #221546;
+}
+
+#kssref-6-10-2 .kss-modifier__default-name,
+#kssref-6-10-2 .kss-modifier__name,
+#kssref-6-10-2 .kss-modifier__description {
+  color: #fff;
+}
+
+#kssref-6-14 .kss-modifier__example,
+#kssref-6-14-1 .kss-modifier__example {
+  max-width: 300px;
+  min-height: 300px;
+}
+
+#kssref-7-1 .kss-modifier__example,
+#kssref-7-2 .kss-modifier__example,
+#kssref-7-3 .kss-modifier__example,
+#kssref-7-4 .kss-modifier__example,
+#kssref-7-5 .kss-modifier__example,
+#kssref-7-6 .kss-modifier__example,
+#kssref-7-7 .kss-modifier__example,
+#kssref-7-8 .kss-modifier__example,
+#kssref-7-9 .kss-modifier__example,
+#kssref-7-10 .kss-modifier__example,
+#kssref-7-11 .kss-modifier__example {
+  overflow: hidden;
+  margin: 0 auto !important;
+}
+
+#kssref-7-4 .kss-modifier__example,
+#kssref-7-6 .kss-modifier__example {
+  overflow: visible;
+  min-height: 100vh;
+}
+
+#kssref-7-6 .kss-modifier__example {
+  height: 170px;
+  width: 100%;
+}
+
+#kssref-7-7 .kss-modifier__example {
+  height: 200px;
+}
+
+#kssref-7-12 .grid--col-4 .tile {
+  min-height: calc(600px + 1.25rem);
+}
+
+#kssref-8-4 .kss-modifier__example svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+#kssref-8-4 .kss-modifier__example div {
+  text-align: center;
+}
+
+#kssref-8-4 .kss-modifier__example .grid__col {
+  -ms-flex: 2;
+      flex: 2;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  border: 1px dashed #ccc;
+  padding: 1rem;
+  margin-right: .5rem;
+  margin-left: .5rem;
+  transition: 1s background ease, 1s color ease;
+}
+
+#kssref-8-4 .kss-modifier__example .grid__col:hover {
+  background: #404040;
+  color: #fff !important;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+#kssref-8-4 .kss-modifier__example .grid__col:nth-child(1n) {
+  color: #c13b06;
+}
+
+#kssref-8-4 .kss-modifier__example .grid__col:nth-child(2n) {
+  color: #295879;
+}
+
+#kssref-8-4 .kss-modifier__example .grid__col:nth-child(3n) {
+  color: #ccdfcb;
+}
+
+#kssref-8-4 .kss-modifier__example .grid__col:nth-child(4n) {
+  color: #df1a00;
+}
+
+#kssref-8-4 .kss-modifier__example .grid__col:nth-child(5n) {
+  color: #d9b310;
+}
+
+#kssref-8-4 .kss-modifier__example .grid__col:nth-child(6n) {
+  color: #83d2d4;
+}
+
+#kssref-10-1 .tile,
+#kssref-10-3 .tile {
+  width: 300px;
+}
+
+#kssref-2-1 .kss-modifier__wrapper,
+#kssref-10-1 .kss-modifier__wrapper,
+#kssref-10-2 .kss-modifier__wrapper {
+  background: #ececec;
+}
+
+.header-navigation__is-open .kss-header {
+  display: none;
+}
+
+#kssref-16-1 .kss-modifier__example {
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+#kssref-16-2 .kss-modifier__example .grid__col {
+  min-height: 5rem;
+}
+
+#kssref-17 .kss-modifier__wrapper {
+  background: #211545;
+  color: #fff;
+}
+
+#kssref-3-4-1 .kss-modifier__example {
+  min-height: 200px;
+}
+
+#kssref-3-4-2 .shortlist__cart-tab {
+  position: relative;
+}
+
+#kssref-3-4 .shortlist__cart-tab {
+  position: fixed;
+}
+
+#kssref-3-9-1 .kss-modifier__example {
+  padding-top: 6rem;
+  overflow: hidden;
+}
+
+#kssref-3-16 .sticky-header {
+  position: relative;
+  transform: translateY(0);
+}
+
+#kssref-3-21 .kss-modifier__example {
+  min-height: 400px;
+}
+
+#kssref-3-21 .kss-modifier__example .js-sidebar-navigation {
+  margin-top: 2rem;
+}
+
+#kssref-4-3-5 .kss__outline {
+  min-height: 300px;
+}
+
+@media screen and (min-width: 769px) {
+  #kss-node.kss--hide-all #kssref-5-2 {
+    margin-bottom: -60px !important;
+  }
+}
+
+#kss-node.kss--hide-all #kssref-5-2 .kss-title {
+  display: none;
+}
+
+#kssref-2-9 .kss-modifier__wrapper,
+#kssref-2-9-1 .kss-modifier__wrapper {
+  max-width: 430px;
+  background: #f3f2f5;
+}
+
+#kssref-2-9 .kss-modifier__wrapper:nth-child(2),
+#kssref-2-9-1 .kss-modifier__wrapper:nth-child(2) {
+  max-width: 350px;
+  background: #f3f2f5;
+}
+
+#kssref-1-2-1 > :nth-child(2),
+#kssref-1-2-3 > :nth-child(2),
+#kssref-1-2-5 > :nth-child(2),
+#kssref-1-2-6 > :nth-child(2),
+#kssref-3-13-2 > :nth-child(2),
+#kssref-3-8-3 > :nth-child(2),
+#kssref-3-8-4 > :nth-child(2),
+#kssref-4-3-1 > :nth-child(2),
+#kssref-4-3-2 > :nth-child(2),
+#kssref-4-3-3 > :nth-child(2),
+#kssref-4-3-4 > :nth-child(2),
+#kssref-4-3-5 > :nth-child(2) {
+  display: none;
+}
+
+#kssref-1-2-6 .kss-modifier__wrapper:last-child .kss-modifier__example {
+  background: #056571;
+}
+
+#kssref-2-12 .kss-modifier__example,
+#kssref-2-12-1 .kss-modifier__example,
+#kssref-2-12-2 .kss-modifier__example {
+  height: 192px;
+}
+
+#kssref-3-17 .kss-modifier__wrapper {
+  max-width: 400px;
+}
+
+#kssref-4-9 .year-toggle {
+  display: block;
+}
+
+#kssref-4-1-1 .kss__outline::after {
+  content: 'Text content';
+}
+
+#kssref-3-24 .kss-modifier__example {
+  max-width: 320px;
+}
+
+#kssref-3-3-1 .kss-modifier__example,
+#kssref-3-3-2 .kss-modifier__example {
+  position: relative;
+  padding: 0;
+}
+
+#kssref-3-3-1 .modal__backdrop,
+#kssref-3-3-2 .modal__backdrop {
+  position: relative;
+  height: 330px;
+}
+
+#kssref-3-3-1 .modal,
+#kssref-3-3-1 .modal-appended,
+#kssref-3-3-2 .modal,
+#kssref-3-3-2 .modal-appended {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  margin: 0 auto;
+}
+
+#kssref-3-3-2 .ui-dialog {
+  position: absolute !important;
+}
+
+#kssref-3-3-2 .modal__backdrop {
+  height: 600px;
+}
+
+#kssref-3-3-2 .modal-appended {
+  position: absolute !important;
+  top: 3rem !important;
+  left: 0 !important;
+  right: 0 !important;
+  max-width: 80% !important;
+}

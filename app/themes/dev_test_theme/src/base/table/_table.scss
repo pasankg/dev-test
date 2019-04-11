@@ -1,0 +1,71 @@
+// Table
+//
+// The default table display.
+//
+// Markup: table.twig
+//
+// Style guide: 1.7
+
+$chroma: add-colors('primary', (
+  table-border:     'grey-xlight',
+  table-th-text:    'grey-dark',
+  table-text:       'grey-dark',
+  primary-text:     'corporate-blue',
+));
+
+table,
+.table {
+  @include margin(0 0 1);
+  width: 100%;
+  border-bottom: 1px solid color(table-border);
+  border-collapse: collapse;
+  color: color(table-text);
+
+  th,
+  td {
+    @include typeset(table-body);
+    padding: $spacing-s;
+    vertical-align: top;
+    text-align: left;
+    border-bottom: 1px solid color(table-border);
+  }
+
+  th {
+    @include typeset(table-head);
+    color: color(table-th-text);
+  }
+
+  &.table--small {
+    margin: 0;
+
+    th {
+      @include typeset(table-mini);
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: .5rem 1rem;
+
+      &:last-child {
+        width: 100px;
+      }
+    }
+
+    td {
+      @include typeset(table-mini);
+      padding: .5rem 1rem;
+    }
+  }
+
+  &--responsive {
+    @include respond-to(tablet-portrait-down) {
+      max-width: calc(100vw - 3rem);
+      overflow-y: scroll;
+      box-shadow: 0 0 10px color('grey-xxlight') inset;
+      border-radius: $border-radius;
+
+      table {
+        min-width: 700px;
+        margin: 0;
+      }
+    }
+  }
+}

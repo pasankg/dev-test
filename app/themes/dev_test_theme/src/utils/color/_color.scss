@@ -1,0 +1,42 @@
+//scss-lint:disable force-pseudo-nesting
+
+// Color
+
+// textElementColor($color)
+//
+// Quickly color all the text elements inside another container class, e.g. a background container.
+//
+// $color - A color name.
+
+@mixin text-element-color($color: inherit) {
+
+  @if $color != inherit {
+    color: color($color);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    a:visited {
+      color: color($color);
+    }
+  } @else {
+    color: $color;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    a:visited {
+      color: $color;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+// Typey
+//
+// Typey is used to manage and resize units and font sizes. Some documentation is available in
+// [Jacks typey repo](https://github.com/jptaranto/typey).
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'); // sass-lint:disable-line no-url-domains no-url-protocols
+
+@import 'typey';
+
+$base-unit:               rem;
+// Enable REM fallbacks if the project is IE8+
+// Ensure use of mixins, instead of functions.
+$rem-fallback:            false;
+
+$base-font-size:          16px;
+// The base line height is used when specify unitless spacing for margins.
+// e.g. @include margin(1) will output margin: 20px; (converted to rem).
+$base-line-height:        20px;
+
+// Ratio line-height is the simplest line height method, and is expressed as a unitless
+// ratio of the font-size.
+$line-height-method:      ratio;
+$base-line-height-ratio:  20 / 16;
+
+$font-weight: (
+  ultrabold:     800,
+  bold:          700,
+  semibold:      600,
+  normal:        400,
+  light:         100
+);
+
+// Line height ratios are specified as caculcations rather than actual values.
+// This allows us to see the pixel value of the line height, rather than a ratio
+// which is less useful. For instance (40/32) means the line-height is 40px.
+$typestyles: (
+  default:                      16px 1.2 normal,
+  small:                        14px 1.2,
+  small-bold:                   14px 1.2 bold,
+  smaller-bold:                 12px 1.2 bold,
+  large:                        18px 1.4,
+  h1:                           32px 1.4 bold,
+  h1-mobile:                    28px 1.25 light,
+  h2:                           30px 1.25 light,
+  h2-mobile:                    24px 1.25 light,
+  h3:                           26px 1.5 light,
+  h3-mobile:                    22px 1.25 light,
+  h4:                           24px 1.4 normal,
+  h4-mobile:                    20px 1.25 normal,
+  h5:                           16px 1.4 semibold,
+  h6:                           16px 1.4 semibold,
+  h1-hero:                      50px 50px light,
+  h1-hero-mobile:               30px 1.4 light,
+  h2-hero:                      32px 1.4 light,
+  h2-hero-mobile:               28px 1.25 light,
+  h3-hero:                      18px 1.4 bold,
+  hero-p:                       19px 1.5 light,
+  label:                        16px 1.3 light,
+  form:                         16px 1.3,
+  button-normal:                14px 1.3 semibold,
+  button-text:                  14px 1.4 light,
+  button-small:                 12px 1.4 light,
+  large-buttons:                17px 1.3 normal,
+  title-small:                  12px 1.4 bold,
+  title-large:                  22px 1.4 light,
+  message:                      14px 1.2 semibold,
+  table-head:                   14px 1.2 bold,
+  table-body:                   16px 1.4 normal,
+  table-body-small:             14px 1.4 normal,
+  table-primary:                16px 1.4 semibold,
+  table-mini:                   12px 1.2 normal,
+  primary-navigation-mobile:    22px (22/16) normal,
+  primary-navigation:           18px (22/16) normal,
+  primary-navigation-active:    18px (22/16) bold,
+  primary-sub-nav:              16px (22/16) semibold,
+  secondary-navigation:         14px 1,
+  footer-title:                 18px 1.4 normal,
+  footer-link:                  16px 1.8 light,
+  footer-p:                     12px 1.4 light,
+  small-title:                  16px 1.4 semibold,
+  tab-title-mobile:             14px 1.4 bold,
+  tab-title-active-mobile:      14px 1.4 bold,
+  tab-sub-title-mobile:         12px 1.4 light,
+  tab-title:                    20px 1.4 light,
+  tab-title-active:             20px 1.4 bold,
+  tab-sub-title:                13px 1.4 light,
+  tab-title-small:              14px 1.4 light,
+  tab-title-small-active:       14px 1.4 semibold,
+  tiny-bold:                    10px 1.4 bold,
+  course-accordion-heading:     20px 1.4 bold,
+  event-title:                  40px 1 bold,
+);
+
+// Font stacks
+$font-base:      'Open Sans', Helvetica, Arial, sans-serif;
+
+$typefaces: (
+  base:          $font-base,
+);

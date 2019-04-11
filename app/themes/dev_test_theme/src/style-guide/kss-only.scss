@@ -1,0 +1,464 @@
+// sass-lint:disable force-attribute-nesting no-color-literals no-ids no-important
+
+@import 'init/colors';
+
+// This file is used to add styles to the style guide and is not included in
+// the Drupal site. It gets included by the style guide by adding it to the
+// options.styleGuide.css object in gulpfile.js.
+
+.kss-nav__menu {
+  line-height: 1.2rem;
+}
+
+#kss-node.kss-offscreen {
+  .kss-header {
+    background: color('corporate-blue');
+  }
+
+  .kss-nav__menu-link.is-in-viewport {
+    color: color('tropics');
+  }
+
+  @media (max-width: 959px) {
+    .kss-doc-title {
+      display: none;
+    }
+
+    .kss-header {
+      width: 45px;
+      height: 40px;
+    }
+
+    .kss-offscreen__toggle {
+      text-indent: -9999px;
+      top: 10px;
+      left: 10px;
+    }
+  }
+}
+
+#kss-search {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid color('tropics');
+  border-radius: 0;
+  color: color('tropics');
+}
+
+.kss-search .easy-autocomplete-container ul {
+  border-radius: 0;
+  border-color: color('white');
+
+  li {
+    &:hover {
+      background: color('grey-xxlight');
+    }
+  }
+}
+
+// The outline helps us demo certain components that might not have any
+// content.
+.kss__outline {
+  border: 2px dotted #ccc;
+  padding: 1rem;
+}
+
+.kss__grid-outline {
+  min-height: 4rem;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 4rem;
+    border: 2px dotted #ccc;
+  }
+}
+
+// Add an outline to every grid item in the style guide.
+[id^='kssref-layouts-'] [class^='layout-'][class*='__'] {
+  outline: 1px dotted #ccc;
+}
+
+.grid-debug .grid__col {
+  &::after {
+    content: '';
+    border: 1px dashed color('grey-light');
+    height: 50px;
+    width: 100%;
+    display: block;
+  }
+}
+
+#kssref-3-10-1 {
+  .kss-modifier__example {
+    background-color: color('blue-light');
+  }
+}
+
+#kssref-4-1-9 {
+  .h1-hero--light,
+  .h2-hero--light,
+  .h3-hero--light {
+    background: color('corporate-blue');
+  }
+
+  .kss-modifier__example > div {
+    border-top: 1px solid #f0f;
+    border-bottom: 1px solid #f0f;
+  }
+}
+
+#kssref-6-1 {
+  .button--transparent {
+    color: currentColor;
+  }
+}
+
+#kssref-6-10-2 {
+  .kss-modifier__wrapper {
+    background: #221546;
+  }
+
+  .kss-modifier__default-name,
+  .kss-modifier__name,
+  .kss-modifier__description {
+    color: #fff;
+  }
+}
+
+#kssref-6-14,
+#kssref-6-14-1 {
+  .kss-modifier__example {
+    max-width: 300px;
+    min-height: 300px;
+  }
+}
+
+#kssref-7-1,
+#kssref-7-2,
+#kssref-7-3,
+#kssref-7-4,
+#kssref-7-5,
+#kssref-7-6,
+#kssref-7-7,
+#kssref-7-8,
+#kssref-7-9,
+#kssref-7-10,
+#kssref-7-11 {
+  .kss-modifier__example {
+    overflow: hidden;
+    margin: 0 auto !important;
+  }
+}
+
+#kssref-7-4,
+#kssref-7-6 {
+  .kss-modifier__example {
+    overflow: visible;
+    min-height: 100vh;
+  }
+}
+
+#kssref-7-6 {
+  .kss-modifier__example {
+    height: 170px;
+    width: 100%;
+  }
+}
+
+#kssref-7-7 {
+  .kss-modifier__example {
+    height: 200px;
+  }
+}
+
+#kssref-7-12 {
+  .grid--col-4 {
+    .tile {
+      // Set to double height
+      min-height: calc(600px + 1.25rem);
+    }
+  }
+}
+
+#kssref-8-4 {
+  .kss-modifier__example {
+    svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    div {
+      text-align: center;
+    }
+
+    .grid__col {
+      flex: 2;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      border: 1px dashed color('grey-light');
+      padding: 1rem;
+      margin-right: .5rem;
+      margin-left: .5rem;
+      transition: 1s background ease, 1s color ease;
+
+      &:hover {
+        background: color(grey-dark);
+        color: color('white') !important;
+        border-style: solid;
+        border-color: currentColor;
+      }
+
+      &:nth-child(1n) {
+        color: color(desert);
+      }
+
+      &:nth-child(2n) {
+        color: color(prussian-blue);
+      }
+
+      &:nth-child(3n) {
+        color: color(fresh);
+      }
+
+      &:nth-child(4n) {
+        color: color(pomegranate);
+      }
+
+      &:nth-child(5n) {
+        color: color(gold-leaf);
+      }
+
+      &:nth-child(6n) {
+        color: color(tropics);
+      }
+    }
+  }
+}
+
+#kssref-10-1,
+#kssref-10-3 {
+  .tile {
+    width: 300px;
+  }
+}
+
+// Apply a grey background to see white boxes edges
+#kssref-2-1,
+#kssref-10-1,
+#kssref-10-2 {
+  .kss-modifier__wrapper {
+    background: color('grey-xxlight');
+  }
+}
+
+// Take advantage of the class added to the body in javascript
+.header-navigation__is-open {
+  .kss-header {
+    display: none;
+  }
+}
+
+#kssref-16-1 {
+  .kss-modifier__example {
+    padding: 4rem 0;
+    overflow: hidden;
+  }
+}
+
+#kssref-16-2 {
+  .kss-modifier__example {
+    .grid__col {
+      min-height: 5rem;
+    }
+  }
+}
+
+#kssref-17 {
+  .kss-modifier__wrapper {
+    background: color(corporate-blue);
+    color: color('white');
+  }
+}
+
+#kssref-3-4-1 {
+  .kss-modifier__example {
+    min-height: 200px;
+  }
+}
+
+// Special display for shortlist.
+#kssref-3-4-2 {
+  .shortlist__cart-tab {
+    position: relative;
+  }
+}
+
+#kssref-3-4 {
+  .shortlist__cart-tab {
+    position: fixed;
+  }
+}
+
+#kssref-3-9-1 {
+  .kss-modifier__example {
+    padding-top: 6rem;
+    overflow: hidden;
+  }
+}
+
+#kssref-3-16 {
+  .sticky-header {
+    position: relative;
+    transform: translateY(0);
+  }
+}
+
+#kssref-3-21 {
+  .kss-modifier__example {
+    min-height: 400px;
+
+    .js-sidebar-navigation {
+      margin-top: 2rem;
+    }
+  }
+}
+
+#kssref-4-3-5 {
+  .kss__outline {
+    min-height: 300px;
+  }
+}
+
+// Hide title bar on homepage full screen.
+#kss-node.kss--hide-all {
+  #kssref-5-2 {
+    @media screen and (min-width: 769px) {
+      margin-bottom: -60px !important;
+    }
+
+    .kss-title {
+      display: none;
+    }
+  }
+}
+
+// Make Tile example boxes a better size.
+#kssref-2-9,
+#kssref-2-9-1 {
+  .kss-modifier__wrapper {
+    max-width: 430px;
+    background: color('grey-xxxlight');
+
+    &:nth-child(2) {
+      max-width: 350px;
+      background: color('grey-xxxlight');
+    }
+  }
+}
+
+// Hide default example on mask top/bottom component.
+#kssref-1-2-1,
+#kssref-1-2-3,
+#kssref-1-2-5,
+#kssref-1-2-6,
+#kssref-3-13-2,
+#kssref-3-8-3,
+#kssref-3-8-4,
+#kssref-4-3-1,
+#kssref-4-3-2,
+#kssref-4-3-3,
+#kssref-4-3-4,
+#kssref-4-3-5 {
+  > :nth-child(2) {
+    display: none;
+  }
+}
+
+#kssref-1-2-6 {
+  .kss-modifier__wrapper {
+    &:last-child {
+      .kss-modifier__example {
+        background: color('teal');
+      }
+    }
+  }
+}
+
+#kssref-2-12,
+#kssref-2-12-1,
+#kssref-2-12-2 {
+  .kss-modifier__example {
+    height: 192px;
+  }
+}
+
+// Make sidebar nav example boxes a better size.
+#kssref-3-17 {
+  .kss-modifier__wrapper {
+    max-width: 400px;
+  }
+}
+
+#kssref-4-9 .year-toggle {
+  display: block;
+}
+
+#kssref-4-1-1 {
+  .kss__outline {
+    &::after {
+      content: 'Text content';
+    }
+  }
+}
+
+#kssref-3-24 {
+  .kss-modifier__example {
+    max-width: 320px;
+  }
+}
+
+#kssref-3-3-1,
+#kssref-3-3-2 {
+  .kss-modifier__example {
+    position: relative;
+    padding: 0;
+  }
+
+  .modal__backdrop {
+    position: relative;
+    height: 330px;
+  }
+
+  .modal,
+  .modal-appended {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    margin: 0 auto;
+  }
+}
+
+#kssref-3-3-2 {
+  .ui-dialog {
+    position: absolute !important;
+  }
+
+  .modal__backdrop {
+    height: 600px;
+  }
+
+  .modal-appended {
+    position: absolute !important;
+    top: 3rem !important;
+    left: 0 !important;
+    right: 0 !important;
+    max-width: 80% !important;
+  }
+}

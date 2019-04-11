@@ -1,0 +1,148 @@
+// Media
+//
+// Images, videos and other embedded media.
+//
+// Style guide: 1.6
+
+// Image
+//
+// Responsive images.
+//
+// Markup: image.twig
+//
+// Style guide: 1.6.1
+
+img {
+  max-width: 100%;
+  height: auto;
+  // Remove that tiny bit of spacing below inline images.
+  vertical-align: text-bottom;
+}
+
+// Video
+//
+// Responsive videos.
+//
+// Markup: video.twig
+//
+// Style guide: 1.6.2
+
+.video,
+%video {
+  @include margin(0 0 1);
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+
+  embed,
+  object,
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+// Figure
+//
+// A captioned image using the `figure` and `figcaption` elements.
+//
+// Markup: figure.twig
+//
+// Style guide: 1.6.3
+
+figure {
+  @include margin(0 0 1);
+
+  &.align-left {
+    display: table;
+
+    figcaption {
+      padding: 0 2rem 0 0;
+    }
+  }
+
+  &.align-right {
+    display: table;
+
+    figcaption {
+      padding: 0 0 0 2rem;
+    }
+  }
+
+  &.align-center {
+    display: table;
+  }
+}
+
+figcaption {
+  @include typeset(table-mini);
+  @include margin-top(5px);
+  text-align: left;
+  caption-side: bottom;
+  color: color(dark-blue);
+  display: table-caption;
+}
+
+// Inline SVG
+//
+// A SVG image displayed inline
+//
+// Markup: inline-svg.twig
+//
+// Style guide: 1.6.4
+
+svg {
+  display: inline;
+}
+
+.svg-defs {
+  height: 0;
+  position: absolute;
+}
+
+.embedded-entity-media-video {
+    &.align-right {
+      min-width: 100%;
+      max-width: 100%;
+      @include respond-to(tablet-landscape-up) {
+        min-width: 60%;
+        max-width: 60%;
+        padding: 0 0 0 2rem;
+        float: right;
+      }
+    }
+
+    &.align-left {
+      min-width: 100%;
+      max-width: 100%;
+      @include respond-to(tablet-landscape-up) {
+        min-width: 60%;
+        max-width: 60%;
+        padding: 0 2rem 0 0;
+        float: left;
+      }
+    }
+}
+
+.embedded-entity-media-image {
+  &.align-left {
+    @include respond-to(tablet-landscape-up) {
+      padding: 0 2rem 0 0;
+    }
+  }
+
+  &.align-right {
+    @include respond-to(tablet-landscape-up) {
+      padding: 0 0 0 2rem;
+    }
+  }
+}
+

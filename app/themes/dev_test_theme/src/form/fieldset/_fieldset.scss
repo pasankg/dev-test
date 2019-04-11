@@ -1,0 +1,17 @@
+@import 'form/label/label';
+
+// Fieldset
+//
+// The fieldset element is used for grouping form elements.
+//
+// Markup: fieldset.twig
+//
+// Style guide: 2.3.9
+
+fieldset {
+  @extend %reset--fieldset;
+}
+
+legend {
+  @extend %label;
+}
