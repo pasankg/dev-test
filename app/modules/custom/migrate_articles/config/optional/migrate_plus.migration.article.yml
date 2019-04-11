@@ -84,7 +84,7 @@ process:
   field_source:
     -
       plugin: skip_on_empty
-      source: course_type
+      source: created
       method: process
     -
       plugin: entity_generate
@@ -105,7 +105,7 @@ process:
   created:
     -
       plugin: skip_on_empty
-      source: course_type
+      source: created
       method: process
     -
       plugin: article_date_converter

@@ -1,4 +1,4 @@
-uuid: 66c787ff-b2d6-4274-8995-46f754324edf
+uuid: a53c51a9-98b7-4a9f-87ac-2ee94b76a31d
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - migrate_articles
 _core:
-  default_config_hash: hWqv5tQfjkrq1saQNJhb7o3P8MPE2I5sVK4zrxu6j1Y
+  default_config_hash: ldjC5ph0Pk4tzCKwkGYcDm2fOrBVFiKVECHjf8VA-sU
 id: article
 class: null
 field_plugin_method: null
@@ -68,7 +68,7 @@ process:
   field_source:
     -
       plugin: skip_on_empty
-      source: course_type
+      source: created
       method: process
     -
       plugin: entity_generate
@@ -89,7 +89,7 @@ process:
   created:
     -
       plugin: skip_on_empty
-      source: course_type
+      source: created
       method: process
     -
       plugin: article_date_converter
