@@ -46,3 +46,14 @@ Further commands can be listed using
 ```bash
 make list
 ```
+
+5).
+I have setup gulp for this project.
+```bash
+make styleguide
+```
+
+style guide path is `app/themes/dev-test_theme/css/style-guide` (WIP)
+
+## Assumpotions
+Article Id field is only used for development purposes hence not displayed for logged in users who has access to admin panel.

@@ -16,6 +16,9 @@ CONFIG_DELETE=$(CURDIR)/drush/config-delete.yml
 CONFIG_IGNORE=$(CURDIR)/drush/config-ignore.yml
 CONFIG_INSTALL=$(CURDIR)/config-install
 
+PHPCS_FOLDERS=./app/modules/custom
+PHPCS_EXTENSIONS=php,module,inc,install,test,profile,theme
+
 .DEFAULT_GOAL := list
 
 default: list;
@@ -56,11 +59,11 @@ updb:
 entity-updates:
 	$(DRUSH) entity:updates -y
 
-phpcbf:
-	./bin/phpcbf
+fix-php:
+	$(PHPCBF) --report=full --standard=vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml --extensions=$(PHPCS_EXTENSIONS) $(PHPCS_FOLDERS)
 
-phpcs:
-	./bin/phpcs -a
+lint-php: psalm
+	$(PHPCS) --report=full --standard=vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml --extensions=$(PHPCS_EXTENSIONS) $(PHPCS_FOLDERS)
 
 test:
 	./bin/phpunit
