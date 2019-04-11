@@ -33,7 +33,7 @@ composer install
 3).
 Import the database at root
 ```bash
-gunzip -c DATABSE_NAME.sql.gz | drush sqlc
+gunzip -c 11042019.sql.gz | drush sqlc
 ```
 
 4).
