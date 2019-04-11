@@ -53,7 +53,14 @@ I have setup gulp for this project.
 make styleguide
 ```
 
-style guide path is `app/themes/dev-test_theme/css/style-guide` (WIP)
+Gulp build will compile all the styles inside the custom theme folder
+```bash
+gulp build
+```
+
+style guide path is `app/themes/dev_test_theme/css/style-guide` (WIP)
 
 ## Assumpotions
-Article Id field is only used for development purposes hence not displayed for logged in users who has access to admin panel.
+* `id` field is only used for development purposes hence not displayed for logged in users who has access to admin panel.
+
+* Since the `source` attribute in the json file is has repeated data it will be saved as terms in a taxonomy called Source.
