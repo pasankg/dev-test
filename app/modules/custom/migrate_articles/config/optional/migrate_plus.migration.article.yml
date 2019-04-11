@@ -79,9 +79,12 @@ process:
   type:
     plugin: default_value
     default_value: article
-#  id: id
   title: title
   field_source:
+    -
+      plugin: skip_on_empty
+      source: course_type
+      method: process
     -
       plugin: entity_generate
       source: field_source
@@ -98,15 +101,21 @@ process:
     plugin: default_value
     default_value: ''
   'body/summary': summary_body
-#  field_image: field_image
-  created: created
-    plugin: article_date_converter
+  created:
+    -
+      plugin: skip_on_empty
+      source: course_type
+      method: process
+    -
+      plugin: article_date_converter
+      source: created
   sticky:
     plugin: default_value
     default_value: 0
   uid:
     plugin: default_value
     default_value: 0
+  #  field_image: field_image
 destination:
   plugin: 'entity:node'
 migration_dependencies: {  }

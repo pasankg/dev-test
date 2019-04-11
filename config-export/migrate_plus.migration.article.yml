@@ -1,4 +1,4 @@
-uuid: d31ce963-824e-478d-9457-ac599c8e96b8
+uuid: 6370d08c-713c-40c0-ad46-ee35c54af322
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - migrate_articles
 _core:
-  default_config_hash: sRPeRqc7gI2EXrQpahcyoJZ0-yfOFbSE88yXSQ-VTcA
+  default_config_hash: bZK38IhDAyIvISqcpVyIgIBwkxLdbJ5g3vgM8LeTJD8
 id: article
 class: null
 field_plugin_method: null
@@ -45,6 +45,10 @@ source:
       label: 'Article url'
       selector: url
     -
+      name: field_image
+      label: 'Article image'
+      selector: contentImageUrl
+    -
       name: created
       label: 'Created date'
       selector: pageDateCreated
@@ -72,10 +76,14 @@ process:
       destination_field: null
       values:
         name: field_source
+  field_url: path
   body/value:
     plugin: default_value
     default_value: ''
   body/summary: summary_body
+  created:
+    plugin: article_date_converter
+    source: created
   sticky:
     plugin: default_value
     default_value: 0

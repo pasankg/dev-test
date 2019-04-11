@@ -1,18 +1,17 @@
-A demonstration of a simple import of a JSON file.
+A demonstration of a simple import of an online JSON source.
 
 REQUIREMENTS
 ============
 You need the contrib modules Migrate Plus and Migrate Tools.
-To make the products.json file available for import, the file will be copied
-from the artifacts folder to your sites/default/files folder.
+Internet access.
 
 USAGE
 =====
 Enable the module, check status, import all products and rollback with Drush
-drush en migrate_json_example
+drush en migrate_articles
 drush migrate-status
-drush migrate-import product
-drush migrate-rollback product
+drush migrate-import article
+drush migrate-rollback article
 
 See config/optional/migrate_plus.migration.product.yml for details about the
 migration.

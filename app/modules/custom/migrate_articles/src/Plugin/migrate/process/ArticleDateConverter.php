@@ -13,13 +13,15 @@ use Drupal\migrate\Row;
  *   id = "article_date_converter",
  * )
  */
-class StripCode extends ProcessPluginBase {
+class ArticleDateConverter extends ProcessPluginBase {
 
   /**
    * {@inheritdoc}
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-    return date("U",strtotime($value));
+    if (!empty($value)) {
+      return date("U",strtotime($value));
+    }
   }
 
 }
