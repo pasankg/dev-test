@@ -20,7 +20,7 @@ class ArticleDateConverter extends ProcessPluginBase {
    */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     if (!empty($value)) {
-      return date("U",strtotime($value));
+      return date("U", strtotime($value));
     }
   }
 

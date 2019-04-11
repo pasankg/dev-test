@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_id
     - field.field.node.article.field_image
     - field.field.node.article.field_source
     - field.field.node.article.field_tags
@@ -93,6 +94,7 @@ content:
     third_party_settings: {  }
 hidden:
   comment: true
+  field_id: true
   field_tags: true
   path: true
   uid: true
