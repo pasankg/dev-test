@@ -93,13 +93,14 @@ process:
       destination_field: null
       values:
         name: field_source
-#  path: path
+  field_url: path
   'body/value':
     plugin: default_value
     default_value: ''
   'body/summary': summary_body
 #  field_image: field_image
-#  created: created
+  created: created
+    plugin: article_date_converter
   sticky:
     plugin: default_value
     default_value: 0

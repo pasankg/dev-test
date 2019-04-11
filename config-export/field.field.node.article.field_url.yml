@@ -1,0 +1,23 @@
+uuid: c0240795-b165-46dd-addf-3554c23dd8b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url
+    - node.type.article
+  module:
+    - link
+id: node.article.field_url
+field_name: field_url
+entity_type: node
+bundle: article
+label: Url
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

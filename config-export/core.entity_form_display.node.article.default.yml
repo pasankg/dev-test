@@ -8,11 +8,12 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_source
     - field.field.node.article.field_tags
+    - field.field.node.article.field_url
     - image.style.thumbnail
     - node.type.article
   module:
     - image
-    - path
+    - link
     - text
 _core:
   default_config_hash: vPb_yvhA-xuNoV_yOmOwYxGuHNRIH1CoMK2qi7BSga0
@@ -53,12 +54,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  path:
-    type: path
+  field_url:
     weight: 4
-    region: content
-    settings: {  }
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
+    type: link_default
+    region: content
   promote:
     type: boolean_checkbox
     settings:
@@ -91,4 +94,5 @@ content:
 hidden:
   comment: true
   field_tags: true
+  path: true
   uid: true

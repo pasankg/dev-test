@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_source
     - field.field.node.article.field_tags
+    - field.field.node.article.field_url
     - image.style.large
     - node.type.article
   module:
@@ -42,4 +43,5 @@ hidden:
   comment: true
   field_source: true
   field_tags: true
+  field_url: true
   links: true
