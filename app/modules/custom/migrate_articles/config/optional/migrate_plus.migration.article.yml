@@ -10,7 +10,7 @@ source:
   # In this example we get data from a local file, to get data from a URL
   # define http as data_fetcher_plugin.
   # data_fetcher_plugin: http
-  data_fetcher_plugin: file
+  data_fetcher_plugin: http
   data_parser_plugin: json
   # The data_parser normally limits the fields passed on to the source plugin
   # to fields configured to be used as part of the migration. To support more
@@ -24,7 +24,7 @@ source:
   # track_changes: true
   # Copy the example JSON file in artifacts folder to sites/default/files folder.
   urls:
-    - 'public://migrate_articles/data-feed.json'
+    - https://gist.githubusercontent.com/kieranjones/44d71c01636b004c1b8d5857f7bc0e24/raw/ffc1ab327d23a805b5a62fbe3d681e8e3cb78e15/data-feed.json
   # An xpath-like selector corresponding to the items to be imported.
   item_selector: data
   # Under 'fields', we list the data items to be imported. The first level keys
@@ -55,10 +55,10 @@ source:
       name: path
       label: 'Article url'
       selector: url
-#    -
-#      name: field_image
-#      label: 'Article image'
-#      selector: contentImageUrl
+    -
+      name: field_image
+      label: 'Article image'
+      selector: contentImageUrl
     -
       name: created
       label: 'Created date'
@@ -90,9 +90,7 @@ process:
       bundle: article
       entity_type: taxonomy_term
       ignore_case: true
-      destination_field: field_source/target_id
-      default_values:
-        field_source/description: Default description
+      destination_field: null
       values:
         name: field_source
 #  path: path

@@ -1,4 +1,4 @@
-uuid: 1ac29d19-eca5-4861-886c-92c5a312493e
+uuid: d31ce963-824e-478d-9457-ac599c8e96b8
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     module:
       - migrate_articles
 _core:
-  default_config_hash: wG4RsFEKDgzNArsIU5S0FmDg2kheFbBnLVhb_NA4Ss0
+  default_config_hash: sRPeRqc7gI2EXrQpahcyoJZ0-yfOFbSE88yXSQ-VTcA
 id: article
 class: null
 field_plugin_method: null
@@ -17,10 +17,10 @@ migration_group: Article
 label: 'JSON feed of articles'
 source:
   plugin: url
-  data_fetcher_plugin: file
+  data_fetcher_plugin: http
   data_parser_plugin: json
   urls:
-    - 'public://migrate_articles/data-feed.json'
+    - 'https://gist.githubusercontent.com/kieranjones/44d71c01636b004c1b8d5857f7bc0e24/raw/ffc1ab327d23a805b5a62fbe3d681e8e3cb78e15/data-feed.json'
   item_selector: data
   fields:
     -
@@ -69,9 +69,7 @@ process:
       bundle: article
       entity_type: taxonomy_term
       ignore_case: true
-      destination_field: field_source/target_id
-      default_values:
-        field_source/description: 'Default description'
+      destination_field: null
       values:
         name: field_source
   body/value:
